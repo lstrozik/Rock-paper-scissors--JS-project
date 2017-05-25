@@ -1,3 +1,74 @@
+body {
+    background: url("../img/RPS.jpg");
+    background-position: center 25vh;
+
+}
 .container {
-    padding-top: 40px;
+    min-height: 100px;
+    min-width: 100px;
+    margin-top: 50px;
+}
+.header {
+    font-size: 36px;
+    color: #c0392b;
+    font-style: italic;
+
+}
+.buttons {
+    margin: 0 auto;
+    text-align: center;
+}
+.label {
+    padding: 20px 40px;
+}
+span {
+    display: block;
+}
+.fa:before {
+    padding: 0px;
+    font-size: 72px;
+    color: white;
+}
+
+#js-playerPick_rock,
+#js-playerPick_paper,
+#js-playerPick_scissors {
+    height: 110px;
+    width: 110px;
+    border-radius: 50px;
+    margin: 0 30px;
+    outline: none;
+}
+#js-playerPick_rock {
+    background-color: #777777;
+    box-shadow: 0px 0px 15px #777777;
+}
+#js-playerPick_paper {
+    background-color: #5BC0DE;
+    box-shadow: 0px 0px 15px #5BC0DE;
+}
+#js-playerPick_scissors {
+    background-color: #D9534F;
+    box-shadow: 0px 0px 15px #D9534F;
+}
+#js-newGameButton {
+    width: 120px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#js-playerPoints {
+    background-color: #28B4E5;
+    font-size: 48px;
+}
+#js-computerPoints {
+    background-color: #28B4E5;
+    font-size: 48px;
+}
+
+.font, #js-playerName {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-top: 10px;
 }

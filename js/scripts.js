@@ -68,8 +68,15 @@ function newGame() {
 // Player's pick
 
 function playerPick(playerPick) {
-    console.log(playerPick);
+    var computerPick = getComputerPick();
+
+    playerPickElem.innerHTML = playerPick;
+    computerPickElem.innerHTML = computerPick;
+
+    checkRoundWinner(playerPick, computerPick);
 }
+
+// Computer's pick
 
 function getComputerPick() {
     var possiblePicks = ['Rock', 'Paper', 'Scissors'];
@@ -81,13 +88,6 @@ var playerPickElem = document.getElementById('js-playerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
 
-function playerPick(playerPick) {
-    var computerPick = getComputerPick();
-
-        playerPickElem.innerHTML = playerPick;
-        computerPickElem.innerHTML = computerPick;
-    }
-
 // Assigning points
 
 function checkRoundWinner(playerPick, computerPick) {
@@ -96,7 +96,7 @@ function checkRoundWinner(playerPick, computerPick) {
   var winnerIs = 'player';
 
     if (playerPick == computerPick) {
-        winnerIs = 'noone'; // remis
+        winnerIs = 'noone'; // draw
     } else if (
         (computerPick == 'Rock' &&  playerPick == 'Scissors') ||
         (computerPick == 'Scissors' &&  playerPick == 'Paper') ||
@@ -113,29 +113,21 @@ function checkRoundWinner(playerPick, computerPick) {
         computer.score++;
     }
 
+
+    setGameElements();
+    setGamePoints();
+    winner();
+}
+
+function winner() {
     if (player.score === 10) {
-    		alert("You win!");
+            alert("You win!");
             gameState = "ended";
     } else if (computer.score === 10) {
             alert("Computer won")
             gameState = "ended";
     }
-    setGameElements();
-    setGamePoints();
 }
-
-
-
-
-function playerPick(playerPick) {
-    var computerPick = getComputerPick();
-
-    playerPickElem.innerHTML = playerPick;
-    computerPickElem.innerHTML = computerPick;
-
-    checkRoundWinner(playerPick, computerPick);
-}
-
 // Score updating
 
 function setGamePoints() {
